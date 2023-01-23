@@ -2,16 +2,16 @@
  *
  * Module: OS
  *
- * File Name: rtos.h
+ * File Name: tasks.h
  *
- * Description: Header file for 
+ * Description: Header file for the tasks
  *
  *******************************************************************************/
 
-#ifndef RTOS_H_
-#define RTOS_H_
+#ifndef TASKS_H_
+#define TASKS_H_
+
+void TasksCreation(void);
 
 
-
-
-#endif /* RTOS_H_ */
+#endif /* TASKS_H_ */

@@ -9,8 +9,8 @@
  *******************************************************************************/
  
  #include "uart.h"
- #include "tm4c123gh6pm.h"
- #include "common_macros.h"
+ #include "../headers/tm4c123gh6pm.h"
+ #include "../headers/common_macros.h"
  
  /*******************************************************************************
  *                      Functions Difinitions                                  *
@@ -56,11 +56,30 @@ void UART0_putchar(uint8 c)
 
 /*
  * Description :
- * Function responsible for print a charcter on the terminal using UART.
+ * Functional responsible for get a char.
+ */
+uint8 UART0_getchar()
+{
+	while((UART0_FR_R & 0x0010) != 0 );     // wait until RXFE is 0
+        return((char)(UART0_DR_R));
+}
+
+/*
+ * Description :
+ * Function responsible for print a charcter on the terminal.
  */
 void print_char(uint8 c)
 {
       UART0_putchar(c);
+}
+
+/*
+ * Description :
+ * Function responsible for get a charcter from the terminal.
+ */
+uint8 get_char()
+{
+      return UART0_getchar();
 }
 
 /*

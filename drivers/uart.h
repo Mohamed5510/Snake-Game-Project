@@ -11,7 +11,7 @@
 #ifndef UART_H_
 #define UART_H_
 
-#include "std_types.h"
+#include "../headers/std_types.h"
 
 /*******************************************************************************
  *                      Functions Prototypes                                   *

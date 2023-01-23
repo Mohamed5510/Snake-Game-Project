@@ -1877,40 +1877,49 @@
     </settings>
   </configuration>
   <file>
-    <name>$PROJ_DIR$\common_macros.h</name>
+    <name>$PROJ_DIR$\headers\common_macros.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\game.c</name>
+    <name>$PROJ_DIR$\main\cstartup_M.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\game.h</name>
+    <name>$PROJ_DIR$\game\game.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\main.c</name>
+    <name>$PROJ_DIR$\game\game.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\rtos.c</name>
+    <name>$PROJ_DIR$\main\main.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\rtos.h</name>
+    <name>$PROJ_DIR$\os\os.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\std_types.h</name>
+    <name>$PROJ_DIR$\os\os.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\tasks.c</name>
+    <name>$PROJ_DIR$\headers\std_types.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\tasks.h</name>
+    <name>$PROJ_DIR$\drivers\systick.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\tm4c123gh6pm.h</name>
+    <name>$PROJ_DIR$\drivers\systick.h</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\UART.c</name>
+    <name>$PROJ_DIR$\os\tasks.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\uart.h</name>
+    <name>$PROJ_DIR$\os\tasks.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\headers\tm4c123gh6pm.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\drivers\uart.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\drivers\uart.h</name>
   </file>
 </project>
 

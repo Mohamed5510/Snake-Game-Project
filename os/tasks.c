@@ -2,16 +2,16 @@
  *
  * Module: OS
  *
- * File Name: tasks.h
+ * File Name: tasks.c
  *
- * Description: Header file for 
+ * Description: source file for the tasks will be run on CPU
  *
  *******************************************************************************/
+#include "tasks.h"
+#include "os.h"
+#include "../game/game.h"
 
-#ifndef TASKS_H_
-#define TASKS_H_
+void TasksCreation(void)
+{
 
-
-
-
-#endif /* TASKS_H_ */
+}
