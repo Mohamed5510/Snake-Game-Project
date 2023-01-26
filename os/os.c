@@ -62,10 +62,35 @@ PendSV_restore\
 }
 
 void OS_scheduler(void) {
+
     // Scheduling Algorithm
+    if(Running_Task)
+    {
+        if(peek(&Ready_Tasks)->priority>=Running_Task->priority)
+        {
+            Scheduled_Task = peek(&Ready_Tasks);
+        }
+        else
+        {
+
+        }
+        
+    }
+    else
+    {
+        Running_Task = peek(&Ready_Tasks);
+    }
+    
+
     
     
     if (Running_Task != Scheduled_Task) {
+        Dequeue(&Ready_Tasks);
+        Enqueue(&Ready_Tasks,Running_Task,Running_Task->priority);
+        Running_Task->task_state = READY;
+        Scheduled_Task->task_state= RUNNING;
+        Running_Task = Scheduled_Task;
+        
         PendSV_Handler();
     }
 }
