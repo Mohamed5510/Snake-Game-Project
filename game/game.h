@@ -4,7 +4,7 @@
  *
  * File Name: game.h
  *
- * Description: Header file for 
+ * Description: Header file for the snake game
  *
  *******************************************************************************/
 

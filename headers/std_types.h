@@ -4,9 +4,7 @@
  *
  * File Name: std_types.h
  *
- * Description: types for AVR
- *
- * Author: Mohamed Mahmoud
+ * Description: definition of used data types
  *
  *******************************************************************************/
 

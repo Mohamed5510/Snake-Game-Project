@@ -1889,6 +1889,9 @@
     <name>$PROJ_DIR$\game\game.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\interrupts\interrupts.c</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\main\main.c</name>
   </file>
   <file>

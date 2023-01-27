@@ -1,3 +1,12 @@
+ /******************************************************************************
+ *
+ * Module: application
+ *
+ * File Name: game.h
+ *
+ * Description: Source file for the snake game
+ *
+ *******************************************************************************/
 #include "game.h"
 #include "../drivers/uart.h"
 

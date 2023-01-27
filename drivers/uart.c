@@ -19,7 +19,8 @@
  /*
  * Description :
  * Functional responsible for Initialize the UART device by:
- * 2. Enable the UART.
+ * 1. Enable the UART.
+ * 2. Configure UART interrupts and GPIO.
  * 3. Setup the UART baud rate.
  */
 void UART0_init(uint32 clk, uint32 baudrate)
@@ -34,10 +35,19 @@ void UART0_init(uint32 clk, uint32 baudrate)
         // BRD = 16000000 / (16 * 9600) = 104.167
 	UART0_IBRD_R = 104;     // integer(BRD)
 	UART0_FBRD_R = 11;      // (BRD - integer(BRD)) * 64 + 0.5
+
+	// Interrupts Configuration
+	SET_BIT(UART0_ICR_R, 4);
+	SET_BIT(UART0_IM_R, 4);
+    //Priority of 4 for UART0_Handler (IRQ = 5)
+    NVIC_SetPriority(UART0_IRQn,5);
+    //Enable interrupts for UART 0
+    NVIC_EnableIRQ(UART0_IRQn);
 	
 	UART0_LCRH_R |= (UART_LCRH_WLEN_8 | UART_LCRH_FEN);
 	UART0_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);
-        // GPIO Configuration
+
+    // GPIO Configuration
 	GPIO_PORTA_AFSEL_R |= 0x03;
 	GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R &= ~0xFF)|(GPIO_PCTL_PA1_U0TX|GPIO_PCTL_PA0_U0RX);
 	GPIO_PORTA_DEN_R |= 0x03;

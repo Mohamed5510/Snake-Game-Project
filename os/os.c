@@ -21,7 +21,7 @@
 
 static uint32 volatile Ticks;
 Node* Ready_Tasks;
-TCB* Blocked_Tasks[20];
+TCB* Blocked_Tasks[20] = {NULL_PTR};
 TCB* volatile Running_Task;
 TCB* volatile Scheduled_Task;
 static volatile void (*Idle_Task_Callback_Ptr)(void) = NULL_PTR;
