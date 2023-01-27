@@ -21,7 +21,6 @@ typedef void (*TaskImplementer)();
  *                       Functions Prototype                                  *
  ******************************************************************************/
 void OS_init(void);
-void OS_scheduler(void);
 void TaskCreate();
 void TaskStartScheduler(void);
 void TaskDelay(uint32 ticks);

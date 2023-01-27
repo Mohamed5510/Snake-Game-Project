@@ -21,6 +21,7 @@
 
 static uint32 volatile Ticks;
 Node* Ready_Tasks;
+TCB* Blocked_Tasks[20];
 TCB* volatile Running_Task;
 TCB* volatile Scheduled_Task;
 static volatile void (*Idle_Task_Callback_Ptr)(void) = NULL_PTR;
@@ -61,42 +62,53 @@ PendSV_restore\
   ");
 }
 
-void OS_scheduler(void) {
-
+static void OS_scheduler(void) {
     // Scheduling Algorithm
-    if(Running_Task)
+    if(Running_Task != NULL_PTR && Running_Task->task_state != BLOCKED)
     {
         if(peek(&Ready_Tasks)->priority>=Running_Task->priority)
         {
             Scheduled_Task = peek(&Ready_Tasks);
         }
-        else
-        {
-
-        }
-        
-    }
-    else
-    {
-        Running_Task = peek(&Ready_Tasks);
-    }
-    
-
-    
-    
-    if (Running_Task != Scheduled_Task) {
+        if (Running_Task != Scheduled_Task) {
         Dequeue(&Ready_Tasks);
         Enqueue(&Ready_Tasks,Running_Task,Running_Task->priority);
         Running_Task->task_state = READY;
         Scheduled_Task->task_state= RUNNING;
         Running_Task = Scheduled_Task;
-        
+        PendSV_Handler();
+        }
+    }
+    else if(Running_Task != NULL_PTR && Running_Task->task_state == BLOCKED)
+    {
+        Scheduled_Task = peek(&Ready_Tasks);
+        Dequeue(&Ready_Tasks);
+        for(uint8 i = 0; i < 20; i++)
+        {
+            if(Blocked_Tasks[i] == NULL_PTR)
+            {
+                Blocked_Tasks[i] = Running_Task;
+            }
+        }
+        Scheduled_Task->task_state= RUNNING;
+        Running_Task = Scheduled_Task;
         PendSV_Handler();
     }
 }
 
 void SysTick_Handler(void) {
     ++Ticks;
+    uint8 i;
+    for(i = 0; i < 20; i++)
+    {
+        (Blocked_Tasks[i]->blocking_ticks)--;
+        if(Blocked_Tasks[i]->blocking_ticks == 0)
+        {
+            Blocked_Tasks[i]->task_state = READY;
+            Enqueue(&Ready_Tasks, Blocked_Tasks[i], Blocked_Tasks[i]->priority);
+            Blocked_Tasks[i] = NULL_PTR;
+        }
+    }
     OS_scheduler();
 }
 
@@ -108,6 +120,7 @@ void TaskCreate(uint32 id, uint32 priority, uint32 stk_size, TaskImplementer tas
     me->priority = priority;
     me->task_state = READY;
     me->sp = task_stk;
+    me->blocking_ticks = 0;
 
     /* round down the stack top to the 8-byte boundary
     * NOTE: ARM Cortex-M stack grows down from hi -> low memory
@@ -173,15 +186,7 @@ void TaskStartScheduler(void)
 
 void TaskDelay(uint32 ticks)
 {
-    uint32 start;
-    uint32 now;
-    __disable_irq();
-    start = Ticks;
-    __enable_irq();
-    while ((now - start) < ticks) {
-        __disable_irq();
-        now = Ticks;
-        __enable_irq();
-        OS_scheduler();
-    }
+    Running_Task->blocking_ticks = ticks;
+    Running_Task->task_state = BLOCKED;
+    OS_scheduler();
 }

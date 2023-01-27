@@ -11,6 +11,7 @@
 #ifndef TASKS_H_
 #define TASKS_H_
 
+void Init_Task(void);
 void TasksCreation(void);
 
 

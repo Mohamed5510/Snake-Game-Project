@@ -13,6 +13,8 @@
 
 int main(void)
 {
+  OS_init();
+  Init_Task();
   TasksCreation();
   TaskStartScheduler();
   while(1){}

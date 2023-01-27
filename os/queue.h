@@ -26,6 +26,7 @@ typedef struct {
     uint32 task_id;
     uint32 priority;
     TaskState task_state;
+    uint32 blocking_ticks;
     void *sp; /* stack pointer */
 } TCB;
 
