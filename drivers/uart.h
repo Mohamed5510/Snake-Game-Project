@@ -33,14 +33,8 @@ void UART0_putchar(uint8 c);
 
 /*
  * Description :
- * Function responsible for print a charcter on the terminal using UART.
+ * Functional responsible for get a char.
  */
-void print_char(uint8 c);
-
-/*
- * Description :
- * Function responsible for print a string on the terminal using UART return when encountering a newline.
- */
-void print_string(const uint8 *str);
+uint8 UART0_getchar(void);
 
 #endif /* UART_H_ */
