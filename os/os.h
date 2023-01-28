@@ -16,6 +16,7 @@
  *                              Data Types                                    *
  ******************************************************************************/
 typedef void (*TaskImplementer)();
+typedef boolean binarySemaphore;
 
 /******************************************************************************
  *                       Functions Prototype                                  *
@@ -25,5 +26,7 @@ void TaskCreate();
 void TaskStartScheduler(void);
 void TaskDelay(uint32 ticks);
 void IdleTaskSetCallback(void(*fn_ptr)(void));
+void TakeSemaphor();
+void GiveSemaphore();
 
 #endif /* OS_H_ */

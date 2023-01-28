@@ -40,9 +40,9 @@ void UART0_init(uint32 clk, uint32 baudrate)
 	SET_BIT(UART0_ICR_R, 4);
 	SET_BIT(UART0_IM_R, 4);
     //Priority of 4 for UART0_Handler (IRQ = 5)
-    NVIC_SetPriority(UART0_IRQn,5);
+    //NVIC_SetPriority(UART0_IRQn,5);
     //Enable interrupts for UART 0
-    NVIC_EnableIRQ(UART0_IRQn);
+    //NVIC_EnableIRQ(UART0_IRQn);
 	
 	UART0_LCRH_R |= (UART_LCRH_WLEN_8 | UART_LCRH_FEN);
 	UART0_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);

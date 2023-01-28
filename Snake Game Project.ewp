@@ -1901,6 +1901,12 @@
     <name>$PROJ_DIR$\os\os.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\os\queue.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\os\queue.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\headers\std_types.h</name>
   </file>
   <file>

@@ -18,5 +18,16 @@ void Init_Task(void)
 
 void TasksCreation(void)
 {
+    // Powerup Task
+    TaskCreate(4, 4, 40, generatePowerup, NULL_PTR);
+
+    // Print Task
+    TaskCreate(3, 3, 40, print_game, NULL_PTR);
+
+    // Move Snake Task
+    TaskCreate(2, 2, 40, move_snake, NULL_PTR);
+
+    // Enemy Task
+    TaskCreate(2, 3, 40, move_snake, NULL_PTR);
 
 }

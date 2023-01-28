@@ -31,10 +31,10 @@ typedef struct {
 } TCB;
 
 // Node
-typedef struct { 
+typedef struct Nodex{ 
     TCB* data;
     uint32 priority; 
-    struct node* next; 
+    struct Nodex* next; 
 } Node; 
 
 /******************************************************************************

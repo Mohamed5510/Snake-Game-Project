@@ -14,7 +14,7 @@
 // Function to Create A New Node 
 static Node* newNode(TCB* d, uint32 p) 
 {
-    Node* temp = (Node*)malloc(sizeof(Node)); 
+    Node* temp = (Node*)malloc(sizeof(Node));
     temp->data = d; 
     temp->priority = p; 
     temp->next = NULL; 

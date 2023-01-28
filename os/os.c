@@ -22,46 +22,45 @@
 static uint32 volatile Ticks;
 Node* Ready_Tasks;
 TCB* Blocked_Tasks[20] = {NULL_PTR};
+TCB* Semaphore_Blocked_Task = NULL_PTR;
 TCB* volatile Running_Task;
 TCB* volatile Scheduled_Task;
 static volatile void (*Idle_Task_Callback_Ptr)(void) = NULL_PTR;
+binarySemaphore semaphore = TRUE;
 
 void OS_init(void) {
-    __disable_irq();
+    __asm("CPSID I");
     /* Assign priority level 0 to the SysTick Interrupt */
     NVIC_SYSTEM_PRI3_REG =  (NVIC_SYSTEM_PRI3_REG & SYSTICK_PRIORITY_MASK) | (SYSTICK_INTERRUPT_PRIORITY << SYSTICK_PRIORITY_BITS_POS);
     /* set the PendSV interrupt priority to the lowest level 7 */
     NVIC_SYSTEM_PRI3_REG =  (NVIC_SYSTEM_PRI3_REG & PENDSV_PRIORITY_MASK) | (PENDSV_INTERRUPT_PRIORITY << PENDSV_PRIORITY_BITS_POS);
     *(uint32 volatile *)0xE000ED20 |= (0xFFU << 16);
-    __enable_irq();
+    __asm("CPSIE I");
 }
 
-void PendSV_Handler(void) {
-  __asm("\
-    IMPORT  Running_Task\
-    IMPORT  Scheduled_Task\
-    CPSID         I\
-    LDR           r1,=OS_curr\
-    LDR           r1,[r1,#0x00]\
-    CBZ           r1,PendSV_restore\
-    PUSH          {r4-r11}\
-    LDR           r1,=OS_curr\
-    LDR           r1,[r1,#0x00]\
-    STR           sp,[r1,#0x00]\
-PendSV_restore\
-    LDR           r1,=OS_next\
-    LDR           r1,[r1,#0x00]\
-    LDR           sp,[r1,#0x00]\
-    LDR           r1,=OS_next\
-    LDR           r1,[r1,#0x00]\
-    LDR           r2,=OS_curr\
-    STR           r1,[r2,#0x00]\
-    POP           {r4-r11}\
-    CPSIE         I\
-    BX            lr\
-  ");
-}
-
+__asm(
+"void PendSV_Handler(void) {\n"
+    "CPSID         I\n\t"
+    "LDR           r1,=Running_Task\n\t"
+    "LDR           r1,[r1,#0x00]\n\t"
+    "CBZ           r1,PendSV_restore\n\t"
+    "PUSH          {r4-r11}\n\t"
+    "LDR           r1,=Running_Task\n\t"
+    "LDR           r1,[r1,#0x00]\n\t"
+    "STR           sp,[r1,#0x00]\n"
+"PendSV_restore:\n\t"
+    "LDR           r1,=Scheduled_Task\n\t"
+    "LDR           r1,[r1,#0x00]\n\t"
+    "LDR           sp,[r1,#0x00]\n\t"
+    "LDR           r1,=Scheduled_Task\n\t"
+    "LDR           r1,[r1,#0x00]\n\t"
+    "LDR           r2,=Running_Task\n\t"
+    "STR           r1,[r2,#0x00]\n\t"
+    "POP           {r4-r11}\n\t"
+    "CPSIE         I\n\t"
+    "BX            lr\n\t"
+"}"
+);
 static void OS_scheduler(void) {
     // Scheduling Algorithm
     if(Running_Task != NULL_PTR && Running_Task->task_state != BLOCKED)
@@ -83,11 +82,15 @@ static void OS_scheduler(void) {
     {
         Scheduled_Task = peek(&Ready_Tasks);
         Dequeue(&Ready_Tasks);
-        for(uint8 i = 0; i < 20; i++)
+        if(Semaphore_Blocked_Task == NULL_PTR)
         {
-            if(Blocked_Tasks[i] == NULL_PTR)
+            for(uint8 i = 0; i < 20; i++)
             {
-                Blocked_Tasks[i] = Running_Task;
+                if(Blocked_Tasks[i] == NULL_PTR)
+                {
+                    Blocked_Tasks[i] = Running_Task;
+                    break;
+                }
             }
         }
         Scheduled_Task->task_state= RUNNING;
@@ -101,12 +104,15 @@ void SysTick_Handler(void) {
     uint8 i;
     for(i = 0; i < 20; i++)
     {
-        (Blocked_Tasks[i]->blocking_ticks)--;
-        if(Blocked_Tasks[i]->blocking_ticks == 0)
+        if(Blocked_Tasks[i] != NULL_PTR)
         {
-            Blocked_Tasks[i]->task_state = READY;
-            Enqueue(&Ready_Tasks, Blocked_Tasks[i], Blocked_Tasks[i]->priority);
-            Blocked_Tasks[i] = NULL_PTR;
+            (Blocked_Tasks[i]->blocking_ticks)--;
+            if(Blocked_Tasks[i]->blocking_ticks == 0)
+            {
+                Blocked_Tasks[i]->task_state = READY;
+                Enqueue(&Ready_Tasks, Blocked_Tasks[i], Blocked_Tasks[i]->priority);
+                Blocked_Tasks[i] = NULL_PTR;
+            }
         }
     }
     OS_scheduler();
@@ -189,4 +195,34 @@ void TaskDelay(uint32 ticks)
     Running_Task->blocking_ticks = ticks;
     Running_Task->task_state = BLOCKED;
     OS_scheduler();
+}
+
+void TakeSemaphore()
+{
+    if(semaphore == TRUE)
+    {
+        semaphore = FALSE;
+        return;
+    }
+    else
+    {
+        Running_Task->task_state = BLOCKED;
+        Semaphore_Blocked_Task = Running_Task;
+        OS_scheduler();
+    }
+}
+
+void GiveSemaphore()
+{
+    if(semaphore == FALSE)
+    {
+        semaphore = TRUE;
+        Enqueue(&Ready_Tasks, Semaphore_Blocked_Task, Semaphore_Blocked_Task->priority);
+        Semaphore_Blocked_Task = NULL_PTR;
+        OS_scheduler();
+    }
+    else
+    {
+        OS_scheduler();
+    }
 }
