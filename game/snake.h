@@ -12,6 +12,14 @@
 #define SNAKE_H_
 
 #include "../headers/std_types.h"
+#define SNAKE '0'
+#define POWERUP 'z'
+#define BORDER '#'
+#define EMPTY ' '
+char nextDir;
+Snake* snake;
+const int size = 20;
+char board [size][size];
 
 /******************************************************************************
  *                              Data Types                                    *
@@ -27,8 +35,7 @@ typedef struct snakeN {
 typedef struct {
     SnakeNode* head;
     SnakeNode* tail;
-    uint16 limit_x;
-    uint16 limit_y;
+    char lastDir;
     int isAlive;
 } Snake;
 
