@@ -16,7 +16,6 @@ int main(void)
   OS_init();
   Init_Task();
   TasksCreation();
-  print_game();
-  //TaskStartScheduler();
-  //while(1){}
+  TaskStartScheduler();
+  while(1){}
 }
