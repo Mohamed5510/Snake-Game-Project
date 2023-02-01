@@ -11,13 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+boolean first_node = TRUE;
+
 // Function to Create A New Node 
-static Node* newNode(TCB* d, uint32 p) 
+ Node* newNode(TCB* d, uint32 p) 
 {
     Node* temp = (Node*)malloc(sizeof(Node));
     temp->data = d; 
     temp->priority = p; 
-    temp->next = NULL; 
+    temp->next = NULL_PTR; 
     return temp; 
 }
   
@@ -39,13 +41,19 @@ void Dequeue(Node** head)
 void Enqueue(Node** head, TCB* d, uint32 p) 
 { 
     Node* start = (*head); 
-	Node* n = start->next;
+    Node* n = start->next;
     // Create new Node 
     Node* temp = newNode(d, p); 
+    if(first_node)
+    {
+       temp->next = *head; 
+        (*head) = temp; 
+        first_node = FALSE;
+    }
     // Special Case: The head of list has lesser 
     // priority than new node. So insert new 
     // node before head node and change head node. 
-    if ((*head)->priority < p) {
+    else if ((*head)->priority < p ) {
         // Insert New Node before head 
         temp->next = *head; 
         (*head) = temp; 
@@ -55,7 +63,7 @@ void Enqueue(Node** head, TCB* d, uint32 p)
         // position to insert new node 
         while (start->next != NULL && n->priority > p) { 
             start = start->next; 
-			n = start->next;
+	    n = start->next;
         } 
         // Either at the ends of the list 
         // or at required position 

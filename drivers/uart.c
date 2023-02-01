@@ -48,10 +48,13 @@ void UART0_init(uint32 clk, uint32 baudrate)
 	UART0_CTL_R = (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);
 
     // GPIO Configuration
-	GPIO_PORTA_AFSEL_R |= 0x03;
-	GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R &= ~0xFF)|(GPIO_PCTL_PA1_U0TX|GPIO_PCTL_PA0_U0RX);
-	GPIO_PORTA_DEN_R |= 0x03;
-	GPIO_PORTA_AMSEL_R &= ~0x03;
+	UART0_CTL_R |= UART_CTL_UARTEN;       // enable UART
+    GPIO_PORTA_AFSEL_R |= 0x03;           // enable alt funct on PA1-0
+    GPIO_PORTA_DEN_R |= 0x03;             // enable digital I/O on PA1-0
+    GPIO_PORTA_AMSEL_R &= ~0x03;          // disable analog functionality on PA
+
+    // Configure PA1-0 Alternate function as UART
+    GPIO_PORTA_PCTL_R |= (1 << GPIO_PCTL_PA0_U0RX) | (1 << GPIO_PCTL_PA1_U0TX);
 }
 
 /*

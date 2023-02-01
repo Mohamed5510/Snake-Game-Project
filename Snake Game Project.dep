@@ -6,324 +6,107 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
-      <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
-      <file>$PROJ_DIR$\os\rtos.h</file>
-      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\Snake Game Project.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\os.pbi</file>
-      <file>$PROJ_DIR$\std_types.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.o</file>
-      <file>$PROJ_DIR$\tasks.c</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\rtos.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\rtos.pbi</file>
-      <file>$PROJ_DIR$\game.h</file>
-      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\systick.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\systick.o</file>
-      <file>$PROJ_DIR$\UART.c</file>
-      <file>$PROJ_DIR$\os\rtos.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\game.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\rtos.o</file>
-      <file>$PROJ_DIR$\cstartup_M.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\headers\tm4c123gh6pm.h</file>
-      <file>$PROJ_DIR$\game.c</file>
-      <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
-      <file>$PROJ_DIR$\common_macros.h</file>
-      <file>$PROJ_DIR$\uart.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\tasks.o</file>
-      <file>$PROJ_DIR$\Debug\Exe\c.out</file>
-      <file>$PROJ_DIR$\tasks.h</file>
-      <file>$PROJ_DIR$\drivers\uart.c</file>
-      <file>$PROJ_DIR$\rtos.c</file>
-      <file>$PROJ_DIR$\drivers\uart.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\tasks.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\game.o</file>
-      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-      <file>$PROJ_DIR$\game\game.c</file>
-      <file>$PROJ_DIR$\main\cstartup_M.c</file>
-      <file>$PROJ_DIR$\drivers\systick.c</file>
-      <file>$PROJ_DIR$\game\game.h</file>
-      <file>$PROJ_DIR$\interrupts\interrupts.c</file>
+      <file>$PROJ_DIR$\main\main.c</file>
       <file>$PROJ_DIR$\os\queue.c</file>
+      <file>$PROJ_DIR$\drivers\systick.c</file>
+      <file>$PROJ_DIR$\headers\common_macros.h</file>
+      <file>$PROJ_DIR$\interrupts\interrupts.c</file>
+      <file>$PROJ_DIR$\os\os.c</file>
       <file>$PROJ_DIR$\drivers\systick.h</file>
       <file>$PROJ_DIR$\os\tasks.c</file>
-      <file>$PROJ_DIR$\os\os.h</file>
+      <file>$PROJ_DIR$\os\tasks.h</file>
+      <file>$PROJ_DIR$\headers\tm4c123gh6pm.h</file>
+      <file>$PROJ_DIR$\main\cstartup_M.c</file>
+      <file>$PROJ_DIR$\game\game.h</file>
       <file>$PROJ_DIR$\os\queue.h</file>
       <file>$PROJ_DIR$\headers\std_types.h</file>
-      <file>$PROJ_DIR$\os\tasks.h</file>
-      <file>$PROJ_DIR$\headers\common_macros.h</file>
-      <file>$PROJ_DIR$\os\os.c</file>
-      <file>$PROJ_DIR$\main\main.c</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\os.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\drivers\uart.c</file>
+      <file>$PROJ_DIR$\os\os.h</file>
+      <file>$PROJ_DIR$\game\game.c</file>
+      <file>$PROJ_DIR$\os\rtos.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\rtos.pbi</file>
       <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\game.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\std_types.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\cstartup_M.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\game.pbi</file>
+      <file>$PROJ_DIR$\rtos.c</file>
       <file>$PROJ_DIR$\Debug\Obj\interrupts.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+      <file>$PROJ_DIR$\game.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\os.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\Snake Game Project.pbd</file>
+      <file>$PROJ_DIR$\Debug\Exe\c.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\os\rtos.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\game.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\os.pbi</file>
+      <file>$PROJ_DIR$\UART.c</file>
+      <file>$PROJ_DIR$\rtos.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\tasks.h</file>
+      <file>$PROJ_DIR$\drivers\uart.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\tasks.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UART.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\rtos.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\tasks.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\common_macros.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\queue.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\uart.h</file>
       <file>$PROJ_DIR$\Debug\Obj\queue.pbi</file>
       <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
       <file>$PROJ_DIR$\Debug\Obj\interrupts.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\queue.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\systick.o</file>
+      <file>$PROJ_DIR$\cstartup_M.c</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\tasks.c</name>
+      <name>[ROOT_NODE]</name>
       <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 28</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 30</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 34</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\UART.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 1</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 61</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 27 6 57 26</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\os\rtos.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 20</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 2</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 2</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\cstartup_M.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 11</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\game.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 36</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 13</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\c.out</name>
-      <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 0 7 36 60 34 54 16 28 1 37 14 25 3</file>
+          <file> 37</file>
         </tool>
-      </inputs>
+      </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\drivers\uart.c</name>
+      <name>$PROJ_DIR$\main\main.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 1</file>
+          <file> 31</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 61</file>
+          <file> 56</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 33 48 23 50</file>
+          <file> 9 15 13 8</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 33 48 23 50</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\rtos.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 20</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 10</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\game\game.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 36</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 41 48 33 64 66 56 69 59 68 63 53 70 46</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41 48 33 64 66 56 69 59 68 63 53 70 46</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main\cstartup_M.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 7</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 11</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\systick.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 16</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 15</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 44 48 23</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44 48 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\interrupts\interrupts.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 60</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 65</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 23 48 50</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23 48 50</file>
+          <file> 9 15 13 8</file>
         </tool>
       </inputs>
     </file>
@@ -332,26 +115,49 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 67</file>
+          <file> 60</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 62</file>
+          <file> 64</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 47 48 58 66 56 69 59 68 63 53 70 55 64</file>
+          <file> 12 13 62 53 38 61 66 70 65 58 55 45 51</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 47 48 58 66 56 69 59 68 63 53 70 55 64</file>
+          <file> 12 13 62 53 38 61 66 70 65 58 55 45 51</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\os\tasks.c</name>
+      <name>$PROJ_DIR$\drivers\systick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6 13 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 13 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\interrupts\interrupts.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
@@ -359,17 +165,17 @@
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 35</file>
+          <file> 67</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 49 46 48 41 33 64 66 56 69 59 68 63 53 70</file>
+          <file> 9 13 3</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 49 46 48 41 33 64 66 56 69 59 68 63 53 70</file>
+          <file> 9 13 3</file>
         </tool>
       </inputs>
     </file>
@@ -378,60 +184,250 @@
       <outputs>
         <tool>
           <name>ICCARM</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15 13 12 9 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 13 12 9 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\os\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 8 15 13 11 47 51 53 38 61 66 70 65 58 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 15 13 11 47 51 53 38 61 66 70 65 58 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main\cstartup_M.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
           <file> 54</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 5</file>
+          <file> 50</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 46 48 47 23 44</file>
+          <file> 47 13 9 3</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 46 48 47 23 44</file>
+          <file> 47 13 9 3</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\main\main.c</name>
+      <name>$PROJ_DIR$\game\game.c</name>
       <outputs>
         <tool>
           <name>ICCARM</name>
-          <file> 34</file>
+          <file> 40</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 22</file>
+          <file> 26</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCARM</name>
-          <file> 23 46 48 49</file>
+          <file> 11 13 47 51 53 38 61 66 70 65 58 55 15</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 23 46 48 49</file>
+          <file> 11 13 47 51 53 38 61 66 70 65 58 55 15</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>[ROOT_NODE]</name>
+      <name>$PROJ_DIR$\game.c</name>
       <outputs>
         <tool>
-          <name>ILINK</name>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
           <file> 29</file>
         </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\rtos.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\c.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 23 24 40 28 31 35 60 68 48 54 30 32 44 33</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\os\rtos.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\UART.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 22 19 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cstartup_M.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
       </outputs>
     </file>
-    <forcedrebuild>
-      <name>[MULTI_TOOL]</name>
-      <tool>ILINK</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>

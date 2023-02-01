@@ -40,6 +40,7 @@ typedef struct Nodex{
 /******************************************************************************
  *                       Functions Prototype                                  *
  ******************************************************************************/
+ Node* newNode(TCB* d, uint32 p) ;
 TCB* peek(Node** head);
 void Dequeue(Node** head);
 void Enqueue(Node** head, TCB* d, uint32 p);

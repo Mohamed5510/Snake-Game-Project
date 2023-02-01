@@ -40,7 +40,7 @@ MultiCoreRunAll=1
 [LMIFTDIDriver]
 LMI_ResetMode=0x00000000
 [DebugChecksum]
-Checksum=-1625216568
+Checksum=1446905759
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -48,6 +48,11 @@ StopOnThrow=_ 0
 ShowArgs=0
 [Disassembly]
 MixedMode=1
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\os\os.c}.66.5" 1 0 0 0 "" 0 ""
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -55,16 +60,18 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[Aliases]
+A0=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\drivers\systick.c" "C:\Users\Mohamed Saad\Desktop\New folder (3)\Snake-Game-Project\drivers\systick.c"
+A1=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\drivers\uart.c" "C:\Users\Mohamed Saad\Desktop\New folder (3)\Snake-Game-Project\drivers\uart.c"
+A2=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\game\game.c" "C:\Users\Mohamed Saad\Desktop\New folder (3)\Snake-Game-Project\game\game.c"
+A3=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\main\main.c" ""
+A4=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\os\os.c" ""
+A5=_ "F:\Studying\4th CSE\1st term\Real Time Embedded Systems\Project\Snake-Game-Project\os\tasks.c" "C:\Users\Mohamed Saad\Desktop\New folder (3)\Snake-Game-Project\os\tasks.c"
+Count=6
+SuppressDialog=0
 [DriverProfiling]
 Enabled=0
 Mode=0
 Graph=0
 Symbiont=0
 Exclusions=
-[Disassemble mode]
-mode=0
-[Breakpoints]
-Count=0
-[Aliases]
-Count=0
-SuppressDialog=0

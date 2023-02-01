@@ -15,15 +15,15 @@
 #define SYSTICK_PRIORITY_MASK  0x1FFFFFFF
 #define SYSTICK_INTERRUPT_PRIORITY  0
 #define SYSTICK_PRIORITY_BITS_POS   29
-#define PENDSV_PRIORITY_MASK 0xFF1FFFFFF
+#define PENDSV_PRIORITY_MASK 0xFF1FFFFF
 #define PENDSV_INTERRUPT_PRIORITY 7
 #define PENDSV_PRIORITY_BITS_POS   21
 
 static uint32 volatile Ticks;
-Node* Ready_Tasks;
+Node* Ready_Tasks ;
 TCB* Blocked_Tasks[20] = {NULL_PTR};
 TCB* Semaphore_Blocked_Task = NULL_PTR;
-TCB* volatile Running_Task;
+TCB* volatile Running_Task = NULL_PTR;
 TCB* volatile Scheduled_Task;
 static volatile void (*Idle_Task_Callback_Ptr)(void) = NULL_PTR;
 binarySemaphore semaphore = TRUE;
@@ -34,12 +34,12 @@ void OS_init(void) {
     NVIC_SYSTEM_PRI3_REG =  (NVIC_SYSTEM_PRI3_REG & SYSTICK_PRIORITY_MASK) | (SYSTICK_INTERRUPT_PRIORITY << SYSTICK_PRIORITY_BITS_POS);
     /* set the PendSV interrupt priority to the lowest level 7 */
     NVIC_SYSTEM_PRI3_REG =  (NVIC_SYSTEM_PRI3_REG & PENDSV_PRIORITY_MASK) | (PENDSV_INTERRUPT_PRIORITY << PENDSV_PRIORITY_BITS_POS);
-    *(uint32 volatile *)0xE000ED20 |= (0xFFU << 16);
     __asm("CPSIE I");
 }
-
+void PendSV_Handler(void)
+{
 __asm(
-"void PendSV_Handler(void) {\n"
+"\n"
     "CPSID         I\n\t"
     "LDR           r1,=Running_Task\n\t"
     "LDR           r1,[r1,#0x00]\n\t"
@@ -58,9 +58,8 @@ __asm(
     "STR           r1,[r2,#0x00]\n\t"
     "POP           {r4-r11}\n\t"
     "CPSIE         I\n\t"
-    "BX            lr\n\t"
-"}"
-);
+    "BX            lr\n");
+}
 static void OS_scheduler(void) {
     // Scheduling Algorithm
     if(Running_Task != NULL_PTR && Running_Task->task_state != BLOCKED)
@@ -97,6 +96,14 @@ static void OS_scheduler(void) {
         Running_Task = Scheduled_Task;
         PendSV_Handler();
     }
+    else if ( Running_Task == NULL_PTR)
+    {
+        Scheduled_Task = peek(&Ready_Tasks);
+        Dequeue(&Ready_Tasks);
+        Scheduled_Task->task_state= RUNNING;
+        Running_Task = Scheduled_Task;
+         PendSV_Handler();
+    }
 }
 
 void SysTick_Handler(void) {
@@ -120,18 +127,20 @@ void SysTick_Handler(void) {
 
 void TaskCreate(uint32 id, uint32 priority, uint32 stk_size, TaskImplementer taskImplementer, void* parameters)
 {
-    uint32 task_stk[40];
-    TCB* me;
-    me->task_id = id;
-    me->priority = priority;
-    me->task_state = READY;
-    me->sp = task_stk;
-    me->blocking_ticks = 0;
+  uint32 task_stk[40]={0};
+    TCB me = {
+   id,
+   priority,
+   READY,
+   0,
+     task_stk
+    };
 
     /* round down the stack top to the 8-byte boundary
     * NOTE: ARM Cortex-M stack grows down from hi -> low memory
     */
-    uint32 *sp = (uint32 *)((((uint32)task_stk + 40) / 8) * 8);
+    //uint32 *sp = (uint32 *)((((uint32)task_stk + 40) / 8) * 8);
+    uint32 *sp =  (uint32 *)task_stk + 40;
     
     *(--sp) = (1U << 24);  /* xPSR */
     *(--sp) = (uint32)taskImplementer; /* PC */
@@ -152,7 +161,7 @@ void TaskCreate(uint32 id, uint32 priority, uint32 stk_size, TaskImplementer tas
     *(--sp) = 0x00000004U; /* R4 */
 
     /* save the top of the stack in the thread's attibute */
-    me->sp = sp;
+    me.sp = sp;
     
     /* round up the bottom of the stack to the 8-byte boundary */
     uint32 * stk_limit = (uint32 *)(((((uint32)task_stk - 1U) / 8) + 1U) * 8);
@@ -162,7 +171,7 @@ void TaskCreate(uint32 id, uint32 priority, uint32 stk_size, TaskImplementer tas
         *sp = 0xDEADBEEFU;
     }
 
-    Enqueue(&Ready_Tasks, me, priority);
+    Enqueue(&Ready_Tasks, &me, priority);
 
 }
 
