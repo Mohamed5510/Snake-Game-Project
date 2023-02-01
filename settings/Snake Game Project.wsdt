@@ -12,7 +12,7 @@
           
           
           
-        <Column0>155</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>203</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -37,7 +37,7 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>Snake Game Project</ExpandedNode><ExpandedNode>Snake Game Project/Output</ExpandedNode><ExpandedNode>Snake Game Project/Output/c.out</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>Snake Game Project</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
@@ -63,14 +63,14 @@
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\os\os.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>49</YPos2><SelStart2>2171</SelStart2><SelEnd2>2171</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\os\queue.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>885</SelStart2><SelEnd2>893</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\os\tasks.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>19</YPos2><SelStart2>757</SelStart2><SelEnd2>757</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\os\queue.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>26</YPos2><SelStart2>855</SelStart2><SelEnd2>855</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\headers\std_types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>16</YPos2><SelStart2>605</SelStart2><SelEnd2>613</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>360</SelStart2><SelEnd2>360</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\drivers\systick.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>25</YPos2><SelStart2>1616</SelStart2><SelEnd2>1616</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main\cstartup_M.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>59</YPos2><SelStart2>2475</SelStart2><SelEnd2>2475</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\os\os.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>54</YPos2><SelStart2>2125</SelStart2><SelEnd2>2125</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\headers\std_types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>16</YPos2><SelStart2>605</SelStart2><SelEnd2>613</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>360</SelStart2><SelEnd2>360</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\drivers\systick.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>25</YPos2><SelStart2>1616</SelStart2><SelEnd2>1616</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main\cstartup_M.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>22</YPos2><SelStart2>2475</SelStart2><SelEnd2>2475</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\game\game.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>33</YPos2><SelStart2>1898</SelStart2><SelEnd2>1898</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-05395908><key>iaridepm.enu1</key></Toolbar-05395908></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>374</Bottom><Right>246</Right><x>-2</x><y>-2</y><xscreen>214</xscreen><yscreen>224</yscreen><sizeHorzCX>156662</sizeHorzCX><sizeHorzCY>327007</sizeHorzCY><sizeVertCX>181552</sizeVertCX><sizeVertCY>548905</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>266</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>268</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>391241</sizeHorzCY><sizeVertCX>156662</sizeVertCX><sizeVertCY>327007</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-05260998><key>iaridepm.enu1</key></Toolbar-05260998></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>467</Bottom><Right>277</Right><x>-2</x><y>-2</y><xscreen>241</xscreen><yscreen>255</yscreen><sizeHorzCX>156901</sizeHorzCX><sizeHorzCY>326504</sizeHorzCY><sizeVertCX>181641</sizeVertCX><sizeVertCY>600512</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>269</Bottom><Right>1538</Right><x>-2</x><y>-2</y><xscreen>1540</xscreen><yscreen>271</yscreen><sizeHorzCX>1002604</sizeHorzCX><sizeHorzCY>346991</sizeHorzCY><sizeVertCX>156901</sizeVertCX><sizeVertCY>326504</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

@@ -12,7 +12,7 @@
 #include <stdlib.h>
 
 // Global Variables
-#define frameWidth 40
+#define frameWidth 20
 #define frameHeight 20
 extern uint8 nextDir;
 Snake* snake;
@@ -58,22 +58,53 @@ void print_string(const uint8* str)
 void Game_init(void)
 {
     UART0_init(16000000, 9600);
+    uint8 i,j;
+    for(i=0;i<frameHeight;i++)
+    {
+      for(j=0;j<frameWidth ;j++)
+      {
+        if(i==0)
+      {
+        board[i][j] = BORDER;
+      }
+      else if(j==0 && i!=0 && i!= frameHeight-1)
+      {
+       board[i][j] = BORDER;
+      }
+      else if(j==frameWidth-1 && i!=0 && i!= frameHeight-1)
+      {
+       board[i][j] = BORDER;
+      }
+      else if(i == frameHeight-1)
+      {
+        board[i][j] = BORDER;
+      }
+        else
+        {
+            board[i][j] = EMPTY;
+        }
+      }
+    }
+          
 }
 
 void print_game(void)
 {
-    uint8 i,j;
-    while(1)
+    uint8 i,j, u = 3;
+   while(u--)
     {
+      print_char('\033[3J');
         for(i = 0; i < frameHeight; i++)
         {
             for(j = 0; j < frameWidth; j++)
             {
                 print_char(board[i][j]);
             }
+            print_char('\r');
+             print_char('\n');
         }
 
-        TaskDelay(500);
+     //TaskDelay(500);
     }
 }
 

@@ -40,7 +40,7 @@ MultiCoreRunAll=1
 [LMIFTDIDriver]
 LMI_ResetMode=0x00000000
 [DebugChecksum]
-Checksum=1446905759
+Checksum=85275659
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -51,8 +51,7 @@ MixedMode=1
 [Disassemble mode]
 mode=0
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\os\os.c}.66.5" 1 0 0 0 "" 0 ""
-Count=1
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

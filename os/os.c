@@ -36,10 +36,10 @@ void OS_init(void) {
     NVIC_SYSTEM_PRI3_REG =  (NVIC_SYSTEM_PRI3_REG & PENDSV_PRIORITY_MASK) | (PENDSV_INTERRUPT_PRIORITY << PENDSV_PRIORITY_BITS_POS);
     __asm("CPSIE I");
 }
+
 void PendSV_Handler(void)
 {
 __asm(
-"\n"
     "CPSID         I\n\t"
     "LDR           r1,=Running_Task\n\t"
     "LDR           r1,[r1,#0x00]\n\t"
@@ -60,6 +60,7 @@ __asm(
     "CPSIE         I\n\t"
     "BX            lr\n");
 }
+
 static void OS_scheduler(void) {
     // Scheduling Algorithm
     if(Running_Task != NULL_PTR && Running_Task->task_state != BLOCKED)
